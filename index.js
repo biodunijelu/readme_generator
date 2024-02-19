@@ -25,12 +25,17 @@ const questions = [
         name: "usage",
         message: "Enter usage information:",
       },
-      
+
       {
         type: "list",
         name: "license",
         message: "Choose a license for your project:",
         choices: ["MIT", "GNU GPLv3", "Apache 2.0", "ISC", "None"],
+      },
+      {
+        type: "input",
+        name: "contributing",
+        message: "Enter contribution guidelines:",
       },
 ];
 
