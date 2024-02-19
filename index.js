@@ -37,6 +37,11 @@ const questions = [
         name: "contributing",
         message: "Enter contribution guidelines:",
       },
+      {
+        type: "input",
+        name: "tests",
+        message: "Enter test instructions:",
+      },
 ];
 
 // function to write README file
