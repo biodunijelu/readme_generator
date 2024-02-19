@@ -61,16 +61,10 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer
-      .prompt(questions)
-      .then((answers) => {
-        const readmeContent = generateMarkdown(answers);
-        writeToFile("README.md", readmeContent);
-        console.log("README.md successfully generated!");
-      })
-      .catch((error) => {
-        console.error("An error occurred:", error);
-      });
+    inquirer.prompt(questions).then((inquirerResponses) => {
+      console.log('Generating README...');
+      writeToFile('README.md', generateMarkdown({ ...inquirerResponses }));
+    });
   }
 
 // function call to initialize program
