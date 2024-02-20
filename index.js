@@ -70,3 +70,27 @@ function init() {
 // function call to initialize program
 
 init();
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const testInstructions = [];
+
+console.log('Enter test instructions. Type "done" on a new line when finished:');
+
+rl.on('line', (input) => {
+  if (input.trim().toLowerCase() === 'done') {
+    rl.close();
+  } else {
+    testInstructions.push(input);
+  }
+});
+
+rl.on('close', () => {
+  console.log('Test instructions entered:');
+  console.log(testInstructions.join('\n'));
+});
